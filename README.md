@@ -140,6 +140,45 @@ Add either an internal or internet-facing annotation to specify where you want t
 
      alb.ingress.kubernetes.io/scheme: internet-facing
 
+**4. Deploy springboot-app** 
+
+     # kubectl apply -f deployement.yml
+     deployment.apps/spring-boot-hello created
+
+     # kubectl apply -f service.yml
+     service/spring-boot-hello created
+
+     # kubectl get pods
+     NAME                                     READY   STATUS     RESTARTS   AGE
+     spring-boot-hello-5c5fbbc5c4-wcgms       1/1     Running    0          27s
+
+     # kubectl get svc
+     NAME                                TYPE           CLUSTER-IP      EXTERNAL-IP                                           PORT(S)          AGE
+     kubernetes                          ClusterIP      10.100.0.1      <none>                                                443/TCP          5h4m
+     spring-boot-hello                   NodePort       10.100.32.241   <none>                                                8080:31412/TCP   30s
+
+**5. Create ingress for springboot using the certificate created in step-2**
+
+Add annotations related to SSL
+
+     # SSL Setting - 1
+         ## SSL Settings
+         alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
+         alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:411686525067:certificate/8adf7812-a1af-4eae-af1b-ea425a238a67
+         #alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-1-2017-01 #Optional (Picks default if not used)    
+     # SSL Setting - 2
+     spec:
+       rules:
+         #- host: ssldemo.tushar10pute.click    # SSL Setting (Optional only if we are not using certificate-arn annotation)
+
+Deploy Ingress with SSL:
+
+     # kubectl apply -f alb_ingress_ssl.yml
+
+     # k get ing
+     NAME                               CLASS    HOSTS                        ADDRESS   PORTS   AGE
+     ingress-usermgmt-restapp-service   <none>   ssldemo.tushar10pute.click             80      25s
+
 <img width="1132" alt="image" src="https://user-images.githubusercontent.com/68885738/189571727-4a6f44e0-0ce6-49dc-87c2-2c226d7f4b5e.png">
 
 
