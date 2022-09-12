@@ -190,14 +190,8 @@ Now you can create the cnmae record for the ingress_name "ssldemo.tushar10pute.c
 
 <img width="1132" alt="image" src="https://user-images.githubusercontent.com/68885738/189571727-4a6f44e0-0ce6-49dc-87c2-2c226d7f4b5e.png">
 
-
 <img width="1219" alt="image" src="https://user-images.githubusercontent.com/68885738/189569606-57992408-a622-461b-a2e1-8c046a67b0d5.png">
 
 Now you can verify the application endpoint is working with SS: or Not.
-
-<img width="1181" alt="image" src="https://user-images.githubusercontent.com/68885738/189540842-9a721908-a770-4476-a3e7-f1565fbe09e1.png">
-
-
-
 
 <img width="569" alt="image" src="https://user-images.githubusercontent.com/68885738/189540817-f8febc31-e12a-4467-8793-46e595526e43.png">
