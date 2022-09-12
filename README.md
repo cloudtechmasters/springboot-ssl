@@ -140,6 +140,13 @@ Add either an internal or internet-facing annotation to specify where you want t
 
      alb.ingress.kubernetes.io/scheme: internet-facing
 
+Once you created ALB ingress-controller, you will see new ALB is created.
+
+
+<img width="1241" alt="image" src="https://user-images.githubusercontent.com/68885738/189540953-3da9d558-0022-4214-a879-1f7d318eb9bd.png">
+
+<img width="1209" alt="image" src="https://user-images.githubusercontent.com/68885738/189540872-162a8a80-38b1-4579-bde8-2cdee3e26ef0.png">
+
 **4. Deploy springboot-app** 
 
      # kubectl apply -f deployement.yml
@@ -179,19 +186,18 @@ Deploy Ingress with SSL:
      NAME                               CLASS    HOSTS                        ADDRESS   PORTS   AGE
      ingress-usermgmt-restapp-service   <none>   ssldemo.tushar10pute.click             80      25s
 
+Now you can create the cnmae record for the ingress_name "ssldemo.tushar10pute.click" which will point to ALB DNS name.
+
 <img width="1132" alt="image" src="https://user-images.githubusercontent.com/68885738/189571727-4a6f44e0-0ce6-49dc-87c2-2c226d7f4b5e.png">
 
 
 <img width="1219" alt="image" src="https://user-images.githubusercontent.com/68885738/189569606-57992408-a622-461b-a2e1-8c046a67b0d5.png">
 
+Now you can verify the application endpoint is working with SS: or Not.
 
 <img width="1181" alt="image" src="https://user-images.githubusercontent.com/68885738/189540842-9a721908-a770-4476-a3e7-f1565fbe09e1.png">
 
 
-<img width="1209" alt="image" src="https://user-images.githubusercontent.com/68885738/189540872-162a8a80-38b1-4579-bde8-2cdee3e26ef0.png">
-
-
-<img width="1241" alt="image" src="https://user-images.githubusercontent.com/68885738/189540953-3da9d558-0022-4214-a879-1f7d318eb9bd.png">
 
 
 <img width="569" alt="image" src="https://user-images.githubusercontent.com/68885738/189540817-f8febc31-e12a-4467-8793-46e595526e43.png">
