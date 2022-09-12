@@ -8,7 +8,8 @@ Steps:
 4. Deploy springboot-app 
 5. Create ingress for springboot using the certificate created in step-2
 
-1. Register a new DNS in AWS Route53
+
+**1. Register a new DNS in AWS Route53**
 
 Route 53 --> Hosted zones  --> Create hosted zone
 
@@ -24,7 +25,7 @@ Now copy the NS entried and create records in your domain provider. I am using n
 
 Now you have DNS ready for your domain.
 
-2. Request Certificate For Domain With In ACM
+**2. Request Certificate For Domain With In ACM**
 
 Goto secret manager --> ACM --> Request new certificate
 
@@ -44,16 +45,16 @@ Click on "Create DNS records in Amazon Route 53"
 
 In Route 53 you can see one cname record added automatically, after 10 minutes certificate status will become Issued.
 
+<img width="1155" alt="image" src="https://user-images.githubusercontent.com/68885738/189570345-eeaa5fe2-7576-486a-b285-d756cd980806.png">
+
 <img width="1450" alt="image" src="https://user-images.githubusercontent.com/68885738/189572113-19413f2a-e7fa-4595-9f83-428517df81ef.png">
 
 Note down the certificate ARN.
 
+**3. Create ALB-ingress-controller**
+
 <img width="1132" alt="image" src="https://user-images.githubusercontent.com/68885738/189571727-4a6f44e0-0ce6-49dc-87c2-2c226d7f4b5e.png">
 
-
-<img width="1155" alt="image" src="https://user-images.githubusercontent.com/68885738/189570345-eeaa5fe2-7576-486a-b285-d756cd980806.png">
-
-2. Request Certificate For Domain With In ACM
 
 <img width="1219" alt="image" src="https://user-images.githubusercontent.com/68885738/189569606-57992408-a622-461b-a2e1-8c046a67b0d5.png">
 
